@@ -1,0 +1,27 @@
+{
+  "name": "expressjs-mongodb",
+  "version": "1.0.0",
+  "description": "this is for working with mongodb ",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "expressjs",
+    "mongodb",
+    "crud"
+  ],
+  "author": "ozodbek",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "mongodb": "^7.0.0",
+    "mongoose": "^8.19.3"
+  }
+}
