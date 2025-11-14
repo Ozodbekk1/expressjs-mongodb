@@ -5,10 +5,14 @@ const app = express();
 import { configDotenv } from "dotenv";
 import cors from "cors";
 import { requestLogger } from "./middleware/logger.middleware.js";
+import userRoute from "./routes/user.route.js";
+import postRoute from "./routes/post.route.js";
+import mongoose from "mongoose";
 configDotenv();
 
 // Middleware Connections
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(requestLogger);
 
@@ -34,10 +38,15 @@ app.use(
 
 // Routes
 
+app.use("/api/v1", userRoute);
+app.use("/api/v1", postRoute);
+
 // Connection
 
 const bootstrap = async () => {
   try {
+    await mongoose.connect(process.env.MONGODB_URL);
+    console.log("Connected DB ✅");
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {
       console.log(
