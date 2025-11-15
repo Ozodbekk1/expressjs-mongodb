@@ -5,8 +5,8 @@ const app = express();
 import { configDotenv } from "dotenv";
 import cors from "cors";
 import { requestLogger } from "./middleware/logger.middleware.js";
-import userRoute from "./routes/user.route.js";
 import postRoute from "./routes/post.route.js";
+import userRoute from "./routes/user.route.js";
 import mongoose from "mongoose";
 configDotenv();
 
